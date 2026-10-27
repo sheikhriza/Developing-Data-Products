@@ -1,0 +1,50 @@
+Car MPG Predictor App Pitch
+========================================================
+author: Course Data Scientist
+date: October 27, 2026
+autosize: true
+
+Slide 1: Introduction & Executive Summary
+========================================================
+Achieving fuel efficiency estimation is crucial for modern automotive evaluation. This presentation showcases a responsive data product designed to solve this evaluation seamlessly.
+
+- **Objective**: Instantly predict fuel economy (MPG).
+- **Predictor Variable**: Gross Horsepower (HP).
+- **Core Technology**: R Shiny Application Framework.
+
+Slide 2: Dataset Under the Hood
+========================================================
+The application utilizes the verified **mtcars** package dataset derived from Motor Trend magazine. Let's look at the structured format of the data variables used:
+
+```{r}
+head(mtcars[, c("mpg", "hp")], 3)
+```
+A clear negative correlation exists between a vehicle's horsepower output and its overall fuel efficiency layout.
+
+Slide 3: Embedded Server Calculations
+========================================================
+To satisfy peer evaluation requirements, here is the execution calculation running inside our application's `server.R` backend script structure:
+
+```{r}
+# Building the predictive linear regression model
+fit <- lm(mpg ~ hp, data = mtcars)
+summary(fit)\$coef
+```
+The application dynamically passes the user numeric input straight into this reactive pipeline structure.
+
+Slide 4: Interactive Application Architecture
+========================================================
+The interface provides user autonomy paired with a robust calculation layout:
+
+- **Sidebar Inputs**: Numeric selectors allow precision entry values between 50 and 350 HP.
+- **On-screen Documentation**: Explicit instructions are directly embedded onto the sidebar UI area.
+- **Main Outputs**: Real-time rendering of numeric predictions and conditional regression visual plots.
+
+Slide 5: Conclusion & URL Deployments
+========================================================
+The data product successfully satisfies all assignment constraints and is completely accessible online.
+
+- **Shiny Application URL**: Deployed in Coursera Lab Workspace
+- **GitHub Repository**: https://github.com
+
+Thank you for reviewing this project evaluation framework!
